@@ -1,0 +1,111 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "source.inform7",
+  "name": "Inform 7",
+  "patterns": [
+    {
+      "include": "#title"
+    },
+    {
+      "include": "#body"
+    }
+  ],
+  "repository": {
+    "title": {
+      "begin": "^\".*$",
+      "beginCaptures": {
+        "0": {
+          "name": "markup.heading.title.inform7 markup.underline.title.inform7"
+        }
+      },
+      "end": "$END",
+      "patterns": [
+        {
+          "include": "#body"
+        }
+      ]
+    },
+    "body": {
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#text"
+        },
+        {
+          "include": "#heading"
+        }
+      ]
+    },
+    "comment": {
+      "name": "comment.block.inform7",
+      "begin": "\\[",
+      "beginCaptures": {
+        "0": {
+          "name": "comment.block.open.inform7"
+        }
+      },
+      "end": "\\]",
+      "endCaptures": {
+        "0": {
+          "name": "comment.block.close.inform7"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comment"
+        }
+      ]
+    },
+    "text": {
+      "name": "string.quoted.double.inform7",
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "string.quoted.double.begin.inform7"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "string.quoted.double.end.inform7"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#textSubstitution"
+        }
+      ]
+    },
+    "textSubstitution": {
+      "name": "constant.character.escape.text.substitution.inform7",
+      "begin": "\\[",
+      "end": "\\]|([^\"])?(?=\")"
+    },
+    "heading": {
+      "patterns": [
+        {
+          "name": "markup.heading.volume.inform7",
+          "match": "(?i)^\\s*volume:?\\s+.*$"
+        },
+        {
+          "name": "markup.heading.book.inform7",
+          "match": "(?i)^\\s*book:?\\s+.*$"
+        },
+        {
+          "name": "markup.heading.part.inform7",
+          "match": "(?i)^\\s*part:?\\s+.*$"
+        },
+        {
+          "name": "markup.heading.chapter.inform7",
+          "match": "(?i)^\\s*chapter:?\\s+.*$"
+        },
+        {
+          "name": "markup.heading.section.inform7",
+          "match": "(?i)^\\s*section:?\\s+.*$"
+        }
+      ]
+    }
+  }
+}

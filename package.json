@@ -30,6 +30,9 @@
   "categories": [
     "Programming Languages"
   ],
+  "keywords": [
+    "inform7"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -38,6 +41,51 @@
         "title": "Verify Quendor",
         "category": "Quendor",
         "icon": "./icons/quendor-product-icon.svg"
+      }
+    ],
+    "languages": [
+      {
+        "id": "inform7",
+        "aliases": [
+          "Inform 7",
+          "i7"
+        ],
+        "extensions": [
+          ".ni",
+          ".i7"
+        ],
+        "icon": {
+          "light": "./icons/i7-light.png",
+          "dark": "./icons/i7-dark.png"
+        },
+        "configuration": "./configs/i7-language-configuration.json"
+      },
+      {
+        "id": "inform7extension",
+        "aliases": [
+          "Inform 7 Extension",
+          "i7extension"
+        ],
+        "extensions": [
+          ".i7x"
+        ],
+        "icon": {
+          "light": "./icons/i7x-light.png",
+          "dark": "./icons/i7x-dark.png"
+        },
+        "configuration": "./i7ext-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "inform7",
+        "scopeName": "source.inform7",
+        "path": "./syntaxes/inform7.tmLanguage.json"
+      },
+      {
+        "language": "inform7extension",
+        "scopeName": "source.inform7.extension",
+        "path": "./syntaxes/inform7extension.tmLanguage.json"
       }
     ]
   },
