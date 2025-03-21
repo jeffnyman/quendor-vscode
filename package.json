@@ -31,7 +31,8 @@
     "Programming Languages"
   ],
   "keywords": [
-    "inform7"
+    "inform7",
+    "inform6"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -73,7 +74,25 @@
           "light": "./icons/i7x-light.png",
           "dark": "./icons/i7x-dark.png"
         },
-        "configuration": "./i7ext-language-configuration.json"
+        "configuration": "./configs/i7ext-language-configuration.json"
+      },
+      {
+        "id": "inform6",
+        "aliases": [
+          "Inform 6",
+          "i6"
+        ],
+        "extensions": [
+          ".inf",
+          ".h",
+          ".i6",
+          ".i6h"
+        ],
+        "icon": {
+          "light": "./icons/i6-light.png",
+          "dark": "./icons/i6-dark.png"
+        },
+        "configuration": "./configs/i6-language-configuration.json"
       }
     ],
     "grammars": [
@@ -86,6 +105,11 @@
         "language": "inform7extension",
         "scopeName": "source.inform7.extension",
         "path": "./syntaxes/inform7extension.tmLanguage.json"
+      },
+      {
+        "language": "inform6",
+        "scopeName": "source.inform6",
+        "path": "./syntaxes/inform6.tmLanguage.json"
       }
     ]
   },
