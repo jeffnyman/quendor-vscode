@@ -1,0 +1,72 @@
+{
+  "name": "quendor",
+  "displayName": "Quendor",
+  "publisher": "jeffnyman",
+  "icon": "./quendor.png",
+  "version": "0.0.0",
+  "description": "Language and tool support for the Infocom + Inform ecosystem.",
+  "license": "MIT",
+  "author": {
+    "name": "Jeff Nyman",
+    "email": "jeffnyman@gmail.com",
+    "url": "https://testerstories.com"
+  },
+  "galleryBanner": {
+    "color": "#303841",
+    "theme": "dark"
+  },
+  "homepage": "https://github.com/jeffnyman/quendor-vscode/blob/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffnyman/quendor-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeffnyman/quendor-vscode/issues",
+    "email": "jeffnyman@gmail.com"
+  },
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "quendor.verify",
+        "title": "Verify Quendor",
+        "category": "Quendor",
+        "icon": "./icons/quendor-product-icon.svg"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile && npm run format && npm run lint && node esbuild.mjs",
+    "test": "npm run compile-tests && npx vscode-test",
+    "compile-tests": "npx tsc -p . --outDir out",
+    "compile": "npx tsc --noEmit",
+    "lint": "npx eslint src",
+    "check": "npx prettier src --check",
+    "format": "npx prettier src --write",
+    "clean": "npx rimraf dist"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.13.11",
+    "@types/sinon": "^17.0.4",
+    "@types/vscode": "^1.98.0",
+    "@typescript-eslint/eslint-plugin": "^8.27.0",
+    "@typescript-eslint/parser": "^8.27.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "esbuild": "0.25.1",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "globals": "^16.0.0",
+    "prettier": "3.5.3",
+    "rimraf": "^6.0.1",
+    "sinon": "^19.0.4",
+    "typescript": "^5.8.2"
+  }
+}

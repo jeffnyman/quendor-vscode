@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- 1px padding is achieved by scaling and centering the content -->
+  
+  <!-- Capital letter Q with thicker stroke that works in both light and dark mode -->
+  <path d="M8 2c-3.31 0-6 2.69-6 6s2.69 6 6 6c1.3 0 2.49-0.41 3.47-1.11l1.13 1.11 0.92-0.92-1.13-1.11c0.7-0.98 1.11-2.17 1.11-3.47 0-3.31-2.69-6-6-6zM8 3.62c2.41 0 4.38 1.97 4.38 4.38s-1.97 4.38-4.38 4.38-4.38-1.97-4.38-4.38 1.97-4.38 4.38-4.38z" fill="currentColor"/>
+  <!-- Tail of the Q -->
+  <path d="M9.38 9.38l1.85 1.85" stroke="currentColor" stroke-width="1.38" stroke-linecap="round"/>
+</svg>
